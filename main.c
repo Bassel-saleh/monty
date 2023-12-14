@@ -44,7 +44,7 @@ void free_allNodes(void)
 {
 	stack_t *temp;
 
-	if (head == 0)
+	if (head == NULL)
 		return;
 	while (head != NULL)
 	{

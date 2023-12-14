@@ -53,6 +53,7 @@ void pop_T(stack_t **stack, unsigned int line_number)
 	if (stack == NULL || *stack == NULL)
 		error_ii(7, line_number);
 	temp = *stack;
+	*stack = temp->next;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
 	free(temp);
