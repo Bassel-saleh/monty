@@ -75,7 +75,7 @@ void error_ii(int error_code, ...)
 }
 
 /**
- * str_error - print the right error
+ * errorStr - print the right error
  * @error_code: error code
  */
 void errorStr(int error_code, ...)
