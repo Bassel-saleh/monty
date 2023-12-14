@@ -9,7 +9,7 @@ void mulNodes(stack_t **stack, unsigned int line_number)
 	int sum;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		ERRORmore(8, line_number, "mul");
+		error_ii(8, line_number, "mul");
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n * (*stack)->prev->n;
 	(*stack)->n = sum;
@@ -27,9 +27,9 @@ void modNodes(stack_t **stack, unsigned int line_number)
 	int sum;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		ERRORmore(8, line_number, "mod");
+		error_ii(8, line_number, "mod");
 	if ((*stack)->n == 0)
-		ERRORmore(9, line_number);
+		error_ii(9, line_number);
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n % (*stack)->prev->n;
 	(*stack)->n = sum;

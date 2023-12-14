@@ -51,7 +51,7 @@ void pop_T(stack_t **stack, unsigned int line_number)
 	stack_t *temp;
 
 	if (stack == NULL || *stack == NULL)
-		ERRORmore(7, line_number);
+		error_ii(7, line_number);
 	temp = *stack;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
@@ -66,6 +66,6 @@ void pop_T(stack_t **stack, unsigned int line_number)
 void print_T(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		ERRORmore(6, line_number);
+		error_ii(6, line_number);
 	printf("%d\n", (*stack)->n);
 }

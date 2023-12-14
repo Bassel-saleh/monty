@@ -42,9 +42,9 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
-void ERROR(int ERROR_code, ...);
-void ERRORmore(int ERROR_code, ...);
-void str_ERROR(int ERROR_code, ...);
+void error_i(int ERROR_code, ...);
+void error_ii(int ERROR_code, ...);
+void errorStr(int ERROR_code, ...);
 void open_f(char *file_name);
 void read_f(FILE *fd);
 int parse_l(char *buffer, int linec, int format);

@@ -1,16 +1,16 @@
 #include "monty.h"
 /**
- * ERROR - print the right error
- * @ERROR_code: error code
+ * error_i - print the right error
+ * @error_code: error code
  */
-void ERROR(int ERROR_code, ...)
+void error_i(int error_code, ...)
 {
 	va_list arg;
 	char *op;
 	int l_num;
 
-	va_start(arg, ERROR_code);
-	switch (ERROR_code)
+	va_start(arg, error_code);
+	switch (error_code)
 	{
 		case 1:
 			fprintf(stderr, "USAGE: monty file\n");
@@ -38,17 +38,17 @@ void ERROR(int ERROR_code, ...)
 }
 
 /**
- * ERRORmore - print the right error
- * @ERROR_code: error code
+ * error_ii - print the right error
+ * @error_code: error code
  */
-void ERRORmore(int ERROR_code, ...)
+void error_ii(int error_code, ...)
 {
 	va_list arg;
 	char *op;
 	int l_num;
 
-	va_start(arg, ERROR_code);
-	switch (ERROR_code)
+	va_start(arg, error_code);
+	switch (error_code)
 	{
 		case 6:
 			fprintf(stderr, "L%d: can't pint, stack empty\n",
@@ -75,17 +75,17 @@ void ERRORmore(int ERROR_code, ...)
 }
 
 /**
- * str_ERROR - print the right error
- * @ERROR_code: error code
+ * str_error - print the right error
+ * @error_code: error code
  */
-void str_ERROR(int ERROR_code, ...)
+void errorStr(int error_code, ...)
 {
 	va_list arg;
 	int l_num;
 
-	va_start(arg, ERROR_code);
+	va_start(arg, error_code);
 	l_num = va_arg(arg, int);
-	switch (ERROR_code)
+	switch (error_code)
 	{
 		case 10:
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);

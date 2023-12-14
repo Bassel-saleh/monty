@@ -8,7 +8,7 @@ void open_f(char *file_name)
 	FILE *fd = fopen(file_name, "r");
 
 	if (file_name == NULL || fd == NULL)
-		ERROR(2, file_name);
+		error_i(2, file_name);
 	read_f(fd);
 	fclose(fd);
 }
@@ -41,7 +41,7 @@ int parse_l(char *buffer, int linec, int format)
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		ERROR(4);
+		error_i(4);
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
 		return (format);
@@ -94,7 +94,7 @@ void choose_Afun(char *opcode, char *value, int ln, int format)
 		}
 	}
 	if (flag == 1)
-		ERROR(3, ln, opcode);
+		error_i(3, ln, opcode);
 }
 
 /**
@@ -119,11 +119,11 @@ void call_function(op_func func, char *op, char *val, int ln, int format)
 			flag = -1;
 		}
 		if (val == NULL)
-			ERROR(5, ln);
+			error_i(5, ln);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				ERROR(5, ln);
+				error_i(5, ln);
 		}
 		node = create_Node(atoi(val) * flag);
 		if (format == 0)

@@ -9,10 +9,10 @@ void printChar(stack_t **stack, unsigned int line_number)
 	int asc;
 
 	if (stack == NULL || *stack == NULL)
-		str_ERROR(11, line_number);
+		errorStr(11, line_number);
 	asc = (*stack)->n;
 	if (asc < 0 || asc > 127)
-		str_ERROR(10, line_number);
+		errorStr(10, line_number);
 	printf("%c\n", asc);
 }
 
